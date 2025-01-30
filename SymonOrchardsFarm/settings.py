@@ -12,11 +12,13 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 
+from django.contrib import staticfiles
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
+import os
 
 import environ
 env = environ.Env()
@@ -150,11 +152,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    os.path.join(BASE_DIR, 'static'),
+    #BASE_DIR / 'static',
 
 ]
+# For production servers, specify where to collect static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Don't forget to run this during deployment:
+#python manage.py collectstatic
+
 # For flashing messages
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
