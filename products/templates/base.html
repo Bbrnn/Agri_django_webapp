@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta Tags for Symon Orchards -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Symon Orchards offers premium organic products for a healthier lifestyle. Explore our fresh produce, connect with nature, and embrace wellness.">
+<meta name="keywords" content="Symon Orchards, organic products, fresh produce, healthy living, nature">
+<meta name="author" content="Symon Orchards">
+
+<!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="Symon Orchards">
+    <meta property="og:site_name" content="Symon Orchards">
+    <meta property="og:site_name" content="Symon Orchards">
+    <meta property="og:site_name" content="Symon Orchards">
+
+    <meta property="og:type" content="website">
+    <meta property="og:type" content="website">
+
+    <meta property="og:title" content="Symon Orchards - Organic Products for Healthy Living">
+    <meta property="og:title" content="Symon Orchards - Organic Products for Healthy Living">
+
+    <meta property="og:description" content="Symon Orchards offers premium organic products for a healthier lifestyle. Explore our fresh produce, connect with nature, and embrace wellness.">
+    <meta property="og:description" content="Symon Orchards offers premium organic products for a healthier lifestyle. Explore our fresh produce, connect with nature, and embrace wellness.">
+
+    <meta property="og:url" content="https://symonorchards.com">
+    <meta property="og:image" content="{% static 'images/SymonOrchard-farm-logo.png' %}">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@SymonOrchards">
+    <meta name="twitter:creator" content="@SymonOrchards">
+    <meta name="twitter:title" content="Symon Orchards - Organic Products for Healthy Living">
+    <meta name="twitter:description" content="Symon Orchards offers premium organic products for a healthier lifestyle. Explore our fresh produce, connect with nature, and embrace wellness.">
+    <meta name="twitter:image" content="{% static 'images/SymonOrchard-farm-logo.png' %}">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <title>{% block title %}Symon Orchards{% endblock %}</title>
+
+
+    <!-- Linking  stylesheets -->
+    <link rel="stylesheet" href="../../static/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">  <!-- Custom styles -->
+    <link href="{% static 'css/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{%  static 'css/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'css/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+
+    <!--Font awesome icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Header Section -->
+<header class="navbar navbar-expand-lg ">
+      <div class="container d-flex align-items-center justify-content-between">
+
+        <!-- Logo and Brand (Aligned to the left) -->
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'index' %}" style="color: white; font-weight: bold;">
+            <img src="{% static 'images/orchardlogo2.jpeg' %}" alt="Logo" style="height: 70px; width: 160px; margin-right: 1px;">
+            Symon Orchards
+        </a>
+
+        <!-- Navbar Links (Centered) -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index' %}" style="color: white;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}" style="color: white;">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'product_list' %}" style="color: white;">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}" style="color: white;">Contact</a>
+                </li>
+
+            </ul>
+                <!-- Get Started Button (Aligned to the right, brown color) -->
+             <button class="btn" style="background-color: #8B4513; color: white;display:flex;flex-direction:column;">
+             <a href="{% url 'user_register' %}" style="color: white; text-decoration: none;">Get Started</a>
+             </button>
+        </div>
+    </div>
+
+</header>
+
+    <!-- Main Content Section -->
+    <main>
+        {% block content %}
+        <!-- Page-specific content will be inserted here -->
+        {% endblock %}
+    </main>
+
+
+     <!-- Floating Action Button -->
+     <button id="scrollToTopBtn" class="btn btn-custom btn-sm " style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: none;">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript for the floating action button -->
+    <script>
+        // Get the button
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        // Show button when scrolling down 100px from the top
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        // When the button is clicked, scroll to the top of the page
+        scrollToTopBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+    </script>
+
+
+<!-- Footer Section -->
+<footer class="footer bg-black text-center py-4 text-white">
+    <div class="row justify-content-center align-items-center text-center" style="height: 100%;">
+    <!-- Quick Links Column -->
+    <div class="col-md-6">
+        <h5 class="text-uppercase mb-3" style="color:green;">Quick Links</h5>
+
+        <ul class="list-unstyled">
+            <li><a href="{% url 'index' %}" class="text-decoration-none text-white">Home</a></li>
+            <li><a href="{% url 'about' %}" class="text-decoration-none text-white">About Us</a></li>
+            <li><a href="{% url 'contact' %}" class="text-decoration-none text-white">Contact</a></li>
+            <li><a href="{% url 'product_list' %}" class="text-decoration-none text-white">Products</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Get Started</a></li>
+        </ul>
+    </div>
+</div>
+
+  <hr class="w-75 mx-auto">
+
+
+    <h4 style="color:green;">Follow us on:</h4>
+    <a>
+                <a href="#"><i class="bi-youtube">Youtube</i></a> |
+                <a href="#"><i class="bi-facebook">Facebook</i></a> |
+                <a href="#"><i class="bi-instagram">Instagram</i></a> |
+                <a href="#"><i class="bi-twitter-x">Twitter</i></a>
+        </a>
+
+        <div class="mt-3 social-links order-first order-lg-last mb-1">
+            <p>&copy; 2025  Symon Orchards. All Rights Reserved.</p>
+        </div>
+
+</footer>
+
+
+      <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static '/css/bootstrap/js/bootstrap.bundle.min.js' %}" defer></script>
+    <script src="{%  static '/css/aos/aos.js' %}"></script>
+    <script src="{% static '/css/glightbox/js/glightbox.min.js' %}"></script>
+    <script>
+            const lightbox = GLightbox({
+                selector: '.glightbox',
+                touchNavigation: true,
+                loop: true,
+            });
+    </script>
+
+    <script>
+             AOS.init();
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+{%  load static %}
+{% block content %}
+<!-- Main Content Section -->
+<section class="jumbotron text-center" style="
+    background-image: url('{% static 'images/hero-image.jpg' %}');
+    background-size: cover;
+    background-position: center center;
+    /* filter: brightness(90%); Adjust the percentage as needed */
+    min-height: 650px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0.98;
+    /*background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */ ">
+
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-10" style="text-align: center;">
+                <h1 class="display-4" style="color: brown; font-weight: bold;">Welcome to Symon Orchards Farm</h1>
+               <!-- <h3 style="color: white;">Experience the Taste of Freshness</h3>-->
+                <p class="lead" style="color: white;">Fresh, high-quality fruits and veggies straight from our farm to your table.<br> Explore our <a href="product_list.html" style="color: blue;">products</a> now!</p>
+
+                <a href="{% url 'about' %}" class="btn btn-custom btn-lg" style="background-color:#4CAF50; padding: 10px 20px;border-color: white; border-radius: 30px; color: whitesmoke; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">Learn more</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="what-we-do" class="services section mb-2" style="height: 770px;background-color: white; margin-top: 10px;" >
+  <div class="content">
+    <div class="container text-center ">
+      <h2 class="content-subtitle " style="color:brown; margin-top:80px;margin-bottom: 30px; padding:14px; ">What We Do?</h2>
+        <hr class="custom-hr mx-auto">
+        <h4 class="mb-5"><i>Providing Fresh Produce Every Single Day</i></h4>
+
+      <!-- Service Items -->
+      <div class="row ">
+        <!-- Service 01: Products -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card " style="height: 450px;">
+            <div class="card-body text-center">
+
+              <div class="service-icon" style="font-size: 40px;">
+                <i class="fas fa-seedling"></i> <!-- Plant icon -->
+              </div>
+              <h4 class="service-title" style="color: green;">Planting</h4>
+              <p>We offer fresh produce such as Spinach, Sukuma Wiki, Bananas, Apples, and more.</p>
+                <p>We offer a variety of fresh produce such as Spinach, Sukuma Wiki, Special Sukuma Wiki, Bananas, Apples, and more. Our vegetables and fruits are grown with care, providing fresh and nutritious options for your meals.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 02: Animal Keeping -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card" style="height: 450px;">
+            <div class="card-body text-center" >
+
+              <div class="service-icon" style="font-size: 40px;">
+                <i class="fas fa-paw"></i> <!-- Animal Keeping icon -->
+              </div>
+              <h4 class="service-title" style="color:green;">Animal Keeping</h4>
+              <p>Our farm raises goats, chickens, bees, and rabbits, providing quality farm products.</p>
+                <p> Our animals provide fresh milk, eggs, honey, and other by-products. We also utilize animal waste as organic fertilizer to nourish our farm.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 03: Water Management -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card" style="height: 450px;">
+            <div class="card-body text-center" >
+
+              <div class="service-icon" style="font-size: 40px;">
+                <i class="fas fa-tint"></i> <!-- Water icon -->
+              </div>
+              <h4 class="service-title " style="color:green;">Water Management</h4>
+              <p>We ensure a consistent water source for our farm, ensuring the health of crops and animals.</p>
+                <p>We sell and distribute high-quality, saltless water sourced from underground reserves. Our water is carefully cleaned to ensure purity, providing fresh and safe water for all your needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="text-centre my-3">
+      <a href="{% url 'product_list' %}" class="btn btn-custom mb-4 w-50" style="display: block;margin: 0 auto; ">Check out our products</a>
+      </div>
+  </div>
+</section>
+
+
+<!--Why Choose Us Section-->
+
+<section id="why-choose-us" class="about section" style="background-color: green;margin-top: 120px;">
+
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="{% static 'images/img_sq_1.jpg' %}" alt="Fresh and Organic Produce" class="img-fluid img-overlap" data-aos="zoom-out">
+        </div>
+        <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
+         <h2 class="content-subtitle text-white  mt-lg-5 ">Why Choose Us</h2>
+          <p class="content-title mb-3">
+            Experience the <strong>Freshness of Nature</strong>
+          </p>
+          <p class="opacity-70">
+            Our dedication to quality and sustainability ensures you get the best produce while supporting the environment.
+          </p>
+
+          <div class="row my-5">
+            <div class="col-lg-12 d-flex align-items-start mb-4">
+              <i class="bi bi-flower1 me-4 display-6"></i>
+              <div>
+                <h4 class="m-0 h5 text-white">Fresh & Organic</h4>
+                <p class="text-black-10">
+                  Our fruits and vegetables are grown without harmful chemicals, delivering the healthiest produce to your table.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-12 d-flex align-items-start mb-4">
+              <i class="bi bi-truck me-4 display-6"></i>
+              <div>
+                <h4 class="m-0 h5 text-white">Fast Delivery</h4>
+                <p class="text-black-10">
+                  Enjoy timely and reliable delivery that ensures your produce arrives fresh and on time.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-12 d-flex align-items-start">
+              <i class="bi bi-globe me-4 display-6"></i>
+              <div>
+                <h4 class="m-0 h5 text-white">Sustainable Farming</h4>
+                <p class="text-black-10">
+                  By using eco-friendly methods, we contribute to a healthier planet and a better future.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Our story -->
+<section id="our-story" class="story section  text-black" style="height: 400px; margin: 120px;">
+  <div class="container">
+    <div class="row gy-4">
+        <!-- "Our Story" section comes first -->
+      <div class="col-lg-6 text-black">
+        <h2 class="content-title mb-4" style="color:brown;">Our Story</h2>
+        <p class="mb-lg-3">
+          At Symon Orchards Farm, we are committed to providing fresh, high-quality produce directly from our fields to your table. Our journey began with a passion for sustainable farming and a dedication to our community.
+        </p>
+        <ul class="list-unstyled list-check">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#28a745" class="bi bi-check" viewBox="0 0 16 16">
+              <path d="M13.485 1.48a.75.75 0 0 1 1.05 1.06l-8.253 8.253a.75.75 0 0 1-1.06 0L1.47 7.06a.75.75 0 0 1 1.06-1.06l3.723 3.722 7.232-7.232Z"/>
+            </svg>
+            Family-owned and operated since 2022
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#28a745" class="bi bi-check" viewBox="0 0 16 16">
+              <path d="M13.485 1.48a.75.75 0 0 1 1.05 1.06l-8.253 8.253a.75.75 0 0 1-1.06 0L1.47 7.06a.75.75 0 0 1 1.06-1.06l3.723 3.722 7.232-7.232Z"/>
+            </svg>
+            Eco-friendly and sustainable farming practices
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#28a745" class="bi bi-check" viewBox="0 0 16 16">
+              <path d="M13.485 1.48a.75.75 0 0 1 1.05 1.06l-8.253 8.253a.75.75 0 0 1-1.06 0L1.47 7.06a.75.75 0 0 1 1.06-1.06l3.723 3.722 7.232-7.232Z"/>
+            </svg>
+            Committed to delivering the freshest produce
+          </li>
+        </ul>
+        <a href="{% url 'contact' %}" class="btn btn-custom mt-5">Get in touch</a>
+      </div>
+
+        <!-- Image section comes second -->
+      <div class="col-lg-6">
+        <div class="image-container">
+          <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn">
+            <img src="{% static 'images/img_sq_1.jpg' %}" alt="Our Story Image" class="img-fluid background-image" />
+            <span class="play"><i class="bi bi-play-fill"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Customer Testimonials Section -->
+<section class="bg-light py-5">
+    <div class="container">
+        <!-- Title with Vertical Line -->
+        <h2 class="text-center position-relative mb-5">
+            Customers Testimonials
+
+        </h2>
+         <hr class="custom-hr mx-auto" >
+
+        <!-- Cards -->
+        <div class="row text-center gy-4">
+            <!-- First Card -->
+            <div class="col-md-4 ">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="mb-3 text-success">
+                            <!-- 4 Green Stars -->
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="card-text">"The fruits from Symon Orchards are incredibly fresh! They taste amazing and I love knowing they’re grown sustainably."</p>
+                        <p>Sarah, Happy Customer</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Card -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="mb-3 text-success">
+                            <!-- 5 Green Stars -->
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="card-text">"Great customer service and quick delivery. I always order from Symon Orchards for the best produce."</p>
+                        <p>John, Loyal Customer</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Card -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="mb-3 text-success">
+                            <!-- 3 Green Stars -->
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="card-text">"The quality is great, but I wish there were more variety in the produce selection."</p>
+                        <footer class="blockquote-footer">Emily, First-Time Buyer</footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Social Media Section -->
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if messages %}
+        <div class="container mt-3">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+            </div>
+        {% endfor %}
+        </div>
+    {% endif %}
+    <h1>Hello!</h1>
+<p>Please login to your account</p>
+<form method="post" class="php-email-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+
+    <button type="submit" class="btn btn-custom">Login</button>
+</form>
+     <p>Don't have an account? <a href="/products/register/">Register</a></p>
+{% endblock %}
+

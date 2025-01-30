@@ -1,0 +1,358 @@
+/* Custom styles */
+:root {
+  --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+}
+body {
+    font-family: 'Inter', 'inter', 'JetBrains Mono', 'JetBrains', 'Arial', sans-serif;
+
+}
+p{
+      font: 400 16px/1.5 Proxima Nova,proxima-nova,Helvetica Neue,Helvetica,Arial,sans-serif;
+
+}
+header {
+    background-color: green;
+    padding: 20px;
+    cursor: pointer;
+
+
+
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: lora, serif;
+}
+
+a {
+  color: #2ea359;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor:pointer;
+}
+
+
+a:hover {
+  background-color:  black;
+  text-decoration: none;
+}
+
+
+.card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+  }
+
+/*contact page*/
+
+/* Index page*/
+/*Customer testimonials*
+ */
+
+
+    /* Card Customization */
+.card {
+        border-radius: 10px;
+        background-color: #ffffff;
+        height: 300px;
+    }
+
+.card-body {
+        padding: 20px;
+    }
+
+.card .bi-star-fill {
+        font-size: 20px;
+    }
+
+    /* Green Star Color */
+.text-success .bi-star-fill {
+        color: #28a745;
+    }
+
+
+
+.btn-custom {
+    background-color: green !important;
+    border-color: brown !important;
+    color: white !important;
+    transition: border 0.3s ease-in-out;
+}
+
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active,
+.btn-custom.active,
+.open > .dropdown-toggle.btn-custom {
+    background-color: brown !important;
+    border-color: green !important;
+    color: white !important;
+}
+
+/* Custom styles for the form */
+.php-email-form {
+    max-width: 800px;
+    padding: 30px;
+    background-color: #fffffd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form input fields */
+.php-email-form .form-control {
+    border-radius: 4px;
+    border: 1px solid #d1d2d4;
+    padding: 10px;
+    font-size: 16px;
+    transition: border 0.3s ease-in-out;
+}
+
+/* Change border color on hover */
+.php-email-form .form-control:hover,
+.php-email-form .form-control:focus {
+    border-color: green;
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+}
+
+/* Custom button styling */
+.php-email-form .btn-custom {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+.php-email-form .btn-custom:hover {
+    background-color: #218838;
+}
+
+/* Form label styling */
+.php-email-form .form-label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .php-email-form {
+        padding: 20px;
+    }
+
+    .php-email-form .form-control {
+        font-size: 14px;
+    }
+
+    .php-email-form .btn-custom {
+        font-size: 14px;
+    }
+}
+
+
+/*About us*/
+{}
+/*About h/* Hero Section */
+.hero-section {
+    position: relative;
+     background: linear-gradient(to bottom,
+    rgba(76, 175, 80, 1),  /* Main Green */
+    rgba(255, 255, 255, 0.7), /* White (Transitional) */
+    rgba(139, 69, 19, 1), /* Brown */
+    rgba(144, 238, 144, 1) /* Light Green at the bottom */
+  );
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Text Styling */
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+
+
+/*hr styling*/
+.custom-hr {
+   /* Remove default border */
+   border:none;
+  height: 10px; /* Set the thickness of the line */
+  background-color: brown; /* Set the color of the line */
+  width: 4%; /* Set the width of the line to 50% of the container */
+}
+/*the team social handles*/
+.social{
+  display: flex;
+  justify-content: center; /* Centers icons horizontally */
+  gap: 20px; /*  Adds space between icons */
+}
+
+
+
+/* end of hero section*/
+
+/*our story video*/
+
+/* Pulsating Play Button
+------------------------------*/
+/* Make the whole area clickable */
+.pulsating-play-btn {
+  display: block;
+  position: relative;
+  width: 80%;
+  height: 70%;
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+}
+
+/* Background image for the link */
+.pulsating-play-btn .background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+
+
+}
+
+/* Play button */
+.pulsating-play-btn .play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #fff;
+  z-index: 10;
+  animation: pulsate-play-btn 2s infinite ease-out;
+
+}
+
+/* Pulsating Play Button */
+.pulsating-play-btn:before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  animation: pulsate-play-btn 2s infinite ease-out;
+  opacity: 1;
+  border-radius: 50%;
+  border: 5px solid color-mix(in srgb, white, transparent 30%);
+  top: -15%;
+  left: -15%;
+  background: rgba(198, 16, 0, 0);
+}
+
+.pulsating-play-btn:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(10%) translateY(10%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 100;
+  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.pulsating-play-btn:hover:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border: none;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 200;
+  animation: none;
+  border-radius: 0;
+}
+
+.pulsating-play-btn:hover:after {
+  border-left: 15px solid green;
+  transform: scale(5);
+}
+
+@keyframes pulsate-play-btn {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+/*registration and login form*/
+
+
+
+
+footer {
+    background-color: #f1f1f1;
+}
+
+.jumbotron {
+    padding: 70px 0;
+    font-weight: bold;
+}
+
+.jumbotron a.btn-lg:hover {
+    background-color:black;
+    color: white;
+}
+
+
+
+
+
+footer a {
+    text-decoration: none;
+    padding: 14px;
+    color:brown;
+}
+
+footer a:hover {
+    color: white;
+}
+
+.nav-item{
+    color: white;
+}

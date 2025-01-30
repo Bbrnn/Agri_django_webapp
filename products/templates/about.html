@@ -1,0 +1,248 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - Symon Orchards{% endblock %}
+
+{% block content %}
+<section class="about-hero">
+<div class="hero-section">
+    <div class="hero-overlay">
+        <div class="container-about text-center text-white">
+
+            <h1 class="display-4" style="color:white;">About Us</h1>
+            <hr class="custom-hr mx-auto">
+            <p class="lead m-5">Symon Orchards is a family-owned agribusiness dedicated to providing fresh, high-quality farm products to our community. Our products include apples, borehole water, vegetables, and more. We take pride in sustainable farming practices and delivering the best to our customers.</p>
+
+            <a href="#" class="btn btn-custom btn-lg">Shop with Us</a>
+        </div>
+    </div>
+</div>
+
+</section>
+
+<section class="mission-vision">
+ <div class="row justify-content-center mt-5">
+                <div class="col-md-4">
+                    <div class="card text-center mb-4" style="background-color: lightgreen; ">
+                        <div class="card-body">
+                            <h3 class="card-title">Our Mission</h3>
+                            <p>To bridge the gap between farms and families by offering fresh, organic, and responsibly sourced products.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center mb-4" style="background-color: rosybrown">
+                        <div class="card-body">
+                            <h3 class="card-title">Our Vision</h3>
+                            <p>To become a leading agribusiness, known for innovation, quality, and sustainability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+
+<section id="what-we-do" class="services section mb-2" style="height: 770px;background-color: whitesmoke; margin-top: 80px;" >
+  <div class="content">
+    <div class="container text-center ">
+      <h2 class="content-subtitle " style="color:brown; margin-top:80px;margin-bottom: 30px; padding:14px; ">What We Do?</h2>
+        <hr class="custom-hr mx-auto">
+        <h4 class="mb-5"><i>Providing Fresh Produce Every Single Day</i></h4>
+
+      <!-- Service Items -->
+      <div class="row ">
+        <!-- Service 01: Products -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card " style="height: 450px;">
+            <div class="card-body text-center">
+
+              <div class="service-icon" style="font-size: 40px;">
+                <i class="fas fa-seedling"></i> <!-- Plant icon -->
+              </div>
+              <h4 class="service-title" style="color: green;">Planting</h4>
+              <p>We offer fresh produce such as Spinach, Sukuma Wiki, Bananas, Apples, and more.</p>
+                <p>We offer a variety of fresh produce such as Spinach, Sukuma Wiki, Special Sukuma Wiki, Bananas, Apples, and more. Our vegetables and fruits are grown with care, providing fresh and nutritious options for your meals.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 02: Animal Keeping -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card" style="height: 450px;">
+            <div class="card-body text-center" >
+
+              <div class="service-icon" style="font-size: 40px;">
+                <i class="fas fa-paw"></i> <!-- Animal Keeping icon -->
+              </div>
+              <h4 class="service-title" style="color:green;">Animal Keeping</h4>
+              <p>Our farm raises goats, chickens, bees, and rabbits, providing quality farm products.</p>
+                <p> Our animals provide fresh milk, eggs, honey, and other by-products. We also utilize animal waste as organic fertilizer to nourish our farm.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 03: Water Management -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card" style="height: 450px;">
+            <div class="card-body text-center" >
+
+              <div class="service-icon" style="font-size: 40px;">
+                <i class="fas fa-tint"></i> <!-- Water icon -->
+              </div>
+              <h4 class="service-title " style="color:green;">Water Management</h4>
+              <p>We ensure a consistent water source for our farm, ensuring the health of crops and animals.</p>
+                <p>We sell and distribute high-quality, saltless water sourced from underground reserves. Our water is carefully cleaned to ensure purity, providing fresh and safe water for all your needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="text-centre my-3">
+      <a href="{% url 'product_list' %}" class="btn btn-custom mb-4 w-50" style="display: block;margin: 0 auto; ">Check out our products</a>
+      </div>
+  </div>
+</section>
+
+
+<!-- Our story -->
+<section id="our-story" class="story section bg-light-subtle text-black" style="height: 600px;">
+  <div class="container">
+    <div class="row gy-4">
+        <!-- "Our Story" section comes first -->
+      <div class="col-lg-6 text-black">
+        <h2 class="content-title mb-4" style="color:brown;">Our Story</h2>
+        <p class="mb-lg-3">
+          At Symon Orchards Farm, we are committed to providing fresh, high-quality produce directly from our fields to your table. Our journey began with a passion for sustainable farming and a dedication to our community.
+        </p>
+        <ul class="list-unstyled list-check">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#28a745" class="bi bi-check" viewBox="0 0 16 16">
+              <path d="M13.485 1.48a.75.75 0 0 1 1.05 1.06l-8.253 8.253a.75.75 0 0 1-1.06 0L1.47 7.06a.75.75 0 0 1 1.06-1.06l3.723 3.722 7.232-7.232Z"/>
+            </svg>
+            Family-owned and operated since 2022
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#28a745" class="bi bi-check" viewBox="0 0 16 16">
+              <path d="M13.485 1.48a.75.75 0 0 1 1.05 1.06l-8.253 8.253a.75.75 0 0 1-1.06 0L1.47 7.06a.75.75 0 0 1 1.06-1.06l3.723 3.722 7.232-7.232Z"/>
+            </svg>
+            Eco-friendly and sustainable farming practices
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#28a745" class="bi bi-check" viewBox="0 0 16 16">
+              <path d="M13.485 1.48a.75.75 0 0 1 1.05 1.06l-8.253 8.253a.75.75 0 0 1-1.06 0L1.47 7.06a.75.75 0 0 1 1.06-1.06l3.723 3.722 7.232-7.232Z"/>
+            </svg>
+            Committed to delivering the freshest produce
+          </li>
+        </ul>
+        <a href="{% url 'contact' %}" class="btn btn-custom mt-5">Get in touch</a>
+      </div>
+
+        <!-- Image section comes second -->
+      <div class="col-lg-6">
+        <div class="image-container">
+          <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn">
+            <img src="{% static 'images/img_sq_1.jpg' %}" alt="Our Story Image" class="img-fluid background-image" />
+            <span class="play"><i class="bi bi-play-fill"></i></span>
+          </a>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Team Section -->
+<section class="team-15 team section" id="team" style="height: 600px;">
+  <!-- Section Title -->
+  <div class="container section-title text-center mt-md-5" data-aos="fade-up">
+    <h2 style="color:brown;">Meet the Team</h2>
+    <p>Meet the passionate people behind our success</p>
+  </div><!-- End Section Title -->
+
+  <div class="content">
+    <div class="container">
+
+      <div class="row">
+        <!-- Team Member 1: Simon -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="person">
+            <figure>
+              <img src="{%  static '/images/img_sq_1.jpg' %}" alt="Image" class="img-fluid rounded-circle">
+              <div class="social  ">
+                <a href="#"><span class="bi bi-facebook"></span></a>
+                <a href="#"><span class="bi bi-twitter"></span></a>
+                <a href="#"><span class="bi bi-linkedin"></span></a>
+              </div>
+            </figure>
+            <div class="person-contents">
+              <h3>Simon</h3>
+              <span class="position">Founder</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 2: Nancy -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="person">
+            <figure>
+              <img src="{%  static '/images/img_sq_1.jpg' %}" alt="Image" class="img-fluid rounded-circle">
+              <div class="social">
+                <a href="#"><span class="bi bi-facebook"></span></a>
+                <a href="#"><span class="bi bi-twitter"></span></a>
+                <a href="#"><span class="bi bi-linkedin"></span></a>
+              </div>
+            </figure>
+            <div class="person-contents">
+              <h3>Nancy</h3>
+              <span class="position">Co-Founder</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 3: Wairimu -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="person">
+            <figure>
+              <img src="{%  static '/images/img_sq_1.jpg' %}" alt="Image" class="img-fluid rounded-circle">
+              <div class="social">
+                <a href="#"><span class="bi bi-facebook"></span></a>
+                <a href="#"><span class="bi bi-twitter"></span></a>
+                <a href="#"><span class="bi bi-linkedin"></span></a>
+              </div>
+            </figure>
+            <div class="person-contents">
+              <h3>Wairimu</h3>
+              <span class="position">Manager</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 4: Farmer (optional) -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="person">
+            <figure>
+              <img src="{% static '/images/img_sq_1.jpg' %} " alt="Image" class="img-fluid rounded-circle">
+              <div class="social">
+                <a href="#"><span class="bi bi-facebook"></span></a>
+                <a href="#"><span class="bi bi-twitter"></span></a>
+                <a href="#"><span class="bi bi-linkedin"></span></a>
+              </div>
+            </figure>
+            <div class="person-contents">
+              <h3>Farmer Name</h3>
+              <span class="position">Farmer</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section><!-- /Team Section -->
+
+
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{%  load static %}
+
+
+
+
+{%  block content %}
+
+   {% if messages %}
+        <div class="container mt-3">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+            </div>
+       {% endfor %}
+   {% endif %}
+
+
+
+    <div class="register-form" style="height: 800px; margin-top: 10px; display: flex; justify-content: center; align-items: center;">
+        <form method='post' action="" class="php-email-form" style="width: 100%; max-width: 600px; text-align: center;">
+            {% csrf_token %}
+            <h3>Create an account</h3>
+            <p><i>Sign up and view our products</i></p>
+            <div class="mb-3 mt-5">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" name="username" class="form-control" id="name" placeholder="Your Name" required>
+                {% for error in form.username.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="pass" class="form-label">Password</label>
+                  <input type="password" class="form-control" name="password" id="pass" placeholder="Passwrd" required>
+                       {% for error in form.password.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+                </div >
+            <div class="mb-3">
+                <label for="confirm-pass" class="form-label">Confirm password</label>
+                <input type="password" class="form-control" name="confirm_password" id="confirm-pass" placeholder="Confirm password" required>
+                {% for error in form.confirm_password.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+
+
+            <button class="btn btn-custom" type="submit" style="width: 100%; background-color: #4CAF50; color: white; padding: 12px; border: none; border-radius: 5px; cursor: pointer;">
+                Register
+            </button>
+
+            <p>Already have an account? <a href="/products/login">Login</a></p>
+
+        </form>
+    </div>
+</div>
+
+{%  endblock %}

@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact Us - Symon Orchards{% endblock %}
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="message {{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<!--messages during submission of the form-->
+      {% if messages %}
+         <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+      {% endif %}
+
+
+
+{% block content %}
+
+<section id="title" class="page-title section justify-content-center ">
+<div class="page-title  text-black" style="height:300px;background-image: url('{% static 'images/page-title-bg.webp' %}');">
+      <div class="container text-center position-relative">
+        <h1 >Contact Us</h1>
+          <p>Have Questions? Reach out to us!</p>
+          <p> 0720977152</p>
+          <p>info@symonorchards.com</p>
+
+
+    </div><!-- End Page Title -->
+</div>
+</section>
+
+  <div class="mb-5 mt-3">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255341.68552867745!2d36.15518221533803!3d-0.41465492209980326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182909033060f4b9%3A0x9f0dae376a3055c7!2sMURINDATI%20PRIMARY%20SCHOOL!5e0!3m2!1sen!2ske!4v1736999347782!5m2!1sen!2ske" width="600" height="450" style="width: 100%; height: 400px;border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+ <section id="contact" class="contact section py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Contact Information Card -->
+        <div class="col-lg-4 mb-4 justify-content-center align-items-center">
+          <div class="card h-100 bg-white shadow p-4 ">
+            <div class="card-body  justify-content-center align-items-center">
+                <h3 class="card-title" style="color: green;"><strong>Get in Touch</strong></h3>
+              <p class="card-text">We'd love to hear from you. Please reach out with any questions or feedback.</p>
+              <div class="mb-3" >
+
+                <i class="bi bi-geo-alt" style="color: green;"></i>
+                <strong style="color:green"> Location:</strong>
+                <p>Gilgil, Nakuru, Kenya</p>
+                  <hr>
+              </div>
+              <div class="mb-3" >
+                <i class="bi bi-envelope" style="color:green;"></i>
+                <strong style="color:green;"> Email:</strong>
+                <p>info@example.com</p>
+                  <hr>
+              </div>
+              <div class="mb-3 fs-6">
+                <i class="bi bi-phone " style="color: green;" ></i>
+                <strong  style="color: green;"> Call:</strong>
+                <p>0720 977 152</p>
+                  <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-8 h-75">
+          <div class="card h-75" style="border:none;">
+            <div class="card-body" >
+              <h4 class="card-title mb-2" style="color:green;"  >Reach Out</h4>
+              <form  method="post" role="form" class="php-email-form">
+                {% csrf_token %}
+                   <!-- Display form-level errors -->
+                   {% if form.errors %}
+                    <div class="alert alert-danger">
+                       <strong>Error!</strong> Please correct the errors below.
+                     </div>
+                   {% endif %}
+
+
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="subject" class="form-label">Subject</label>
+
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+
+                  <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="text-center   mt-3 ">
+                  <button type="submit" class="btn  w-100 btn-custom text-white" style="background-color: green" >Send Message</button>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+
+{% endblock %}
