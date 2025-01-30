@@ -152,14 +152,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    #BASE_DIR / 'static',
+   # os.path.join(BASE_DIR, 'static'),
+   BASE_DIR / 'static',
 
 ]
 # For production servers, specify where to collect static files
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATIC_URL = '/static/'  # URL for serving static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Absolute path to where static files will be collected
 # Don't forget to run this during deployment:
 #python manage.py collectstatic
 
