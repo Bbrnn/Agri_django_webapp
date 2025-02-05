@@ -14,15 +14,35 @@
         {% endfor %}
         </div>
     {% endif %}
+<div class="text-center mt-3">
     <h1>Hello!</h1>
-<p>Please login to your account</p>
-<form method="post" class="php-email-form">
-    {% csrf_token %}
-    {{ form.as_p }}
+</div>
+
+<section class=" justify-content-center" style="height:450px; display: flex; justify-content: center; align-items: center;">
 
 
-    <button type="submit" class="btn btn-custom">Login</button>
-</form>
+      <form method='POST' action="" class="php-email-form" style="background-color: whitesmoke; width: 100%; max-width: 600px; ">
+            {% csrf_token %}
+          {form as_p}
+            <h3 class="text-center" style="color: brown;">Login to your account</h3>
+            <p class="text-center"><i>Welcome back</i></p>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="pass" class="form-label">Password</label>
+                  <input type="password" class="form-control" name="password" id="pass" placeholder="Password" required>
+                </div >
+
+            <button class="btn btn-custom" type="submit" style="width: 100%; background-color: #4CAF50; color: white; padding: 12px; border: none; border-radius: 5px; cursor: pointer;">
+                Login
+            </button>
      <p>Don't have an account? <a href="/products/register/">Register</a></p>
-{% endblock %}
+      </form>
 
+
+</section>
+
+{% endblock %}

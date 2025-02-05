@@ -164,7 +164,7 @@ STATICFILES_DIRS = [
 STATIC_URL = '/static/'  # URL for serving static files
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Absolute path to where static files will be collected
 # Don't forget to run this during deployment:
-#python manage.py collectstatic
+
 
 # For flashing messages
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
