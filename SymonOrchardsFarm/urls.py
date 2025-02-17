@@ -25,7 +25,7 @@ urlpatterns = [
     #auth urls
     path('auth/', include('django.contrib.auth.urls')),
 
-    path('products/',include('products.urls')),
+    path('',include('products.urls')),
 ]
 
 # Serve static files in production (only when DEBUG is False)
