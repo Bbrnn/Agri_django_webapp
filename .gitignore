@@ -1,0 +1,26 @@
+# Ignore .env file containing sensitive information
+.env
+
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore Django migrations folder
+#migrations/
+
+# Ignore database files
+
+
+# Ignore static files generated in production
+/staticfiles/
+
+# Ignore logs
+*.log
+
+# Ignore virtual environment
+venv/
+
+# Ignore system-specific files (for macOS, Windows, etc.)
+.DS_Store
+Thumbs.db

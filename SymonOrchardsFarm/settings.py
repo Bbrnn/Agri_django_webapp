@@ -55,10 +55,11 @@ EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS', default=True)
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%1zmk%#30@yzy32s*$&h!ycy(ken$jk8!#le#9$qzv@^b1%jza'
+SECRET_KEY = env('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #ALLOWED_HOSTS = []
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost', '127.0.0.1'])
@@ -80,6 +81,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -154,17 +156,15 @@ USE_TZ = True
 
 #STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-   # os.path.join(BASE_DIR, 'static'),
    BASE_DIR / 'static',
-
 ]
-# For production servers, specify where to collect static files
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'  # URL for serving static files
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Absolute path to where static files will be collected
-# Don't forget to run this during deployment:
 
+
+# Add the path to collect static files during deployment
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # For flashing messages
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
