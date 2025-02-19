@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Available Products</h2>
+
+    <div class="row">
+        <h3 class="text-center text-black">Fruits</h3>
+        {% for product in products %}
+            <div class="col-md-4 mb-4">  <!-- 3 columns per row -->
+                <div class="card-products shadow-sm h-100">
+                    <img src="{{ product.image.url }}" class="card-img-top w-75  justify-content-center align-content-center" alt="{{ product.name }}" style="height: 200px;  object-fit: cover;">
+                    <div class="card-body">
+                        <h4 class="card-title"> {{ product.name }}</h4><br>
+                        <p class="card-text"><span class="product-details">Price: </span>Kes {{ product.price }}</p>
+                        <p class="card-text "> Stock: {{ product.stock }}</p>
+                        {% if product.id %}
+                        <a href="{% url 'product_detail' product.id %}" class="btn btn-custom mt-5">View Details</a>
+                        {% else %}
+                         <p>Product is missing!</p>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <p class="text-center">No products available.</p>
+            </div>
+        {% endfor %}
+    </div>
+
+
+</div>
+{% endblock %}

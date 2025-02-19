@@ -2,32 +2,34 @@
 {%  load static %}
 {% block content %}
 <!-- Main Content Section -->
+<!-- Main Content Section -->
 <section class="jumbotron text-center" style="
     background-image: url('{% static 'images/hero-image.jpg' %}');
     background-size: cover;
     background-position: center center;
-    /* filter: brightness(90%); Adjust the percentage as needed */
     min-height: 650px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    opacity: 0.98;
-    /*background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */ ">
+    position: relative;
+    opacity: 0.98;">
 
-    <div class="container">
+    <!-- Gradient Overlay -->
+    <div style="background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%); position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
+
+    <div class="container position-relative">
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-10" style="text-align: center;">
-                <h1 class="display-4" style="color: brown; font-weight: 150px;">Welcome to Symon Orchards Farm</h1>
-               <!-- <h3 style="color: white;">Experience the Taste of Freshness</h3>-->
-                <p class="lead" style="color: white;">We Produce Organic Fruits, Arrow roots and Veggies among other in our farm.<br> Explore our <a href="product_list.html" style="color: blue;">products</a> now!</p>
-
-                <a href="{% url 'about' %}" class="btn btn-custom btn-lg" style="background-color:#4CAF50; padding: 10px 20px;border-color: white; border-radius: 30px; color: whitesmoke; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">Learn more</a>
+                <h1 class="display-4" style="color: white; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">Welcome to Symon Orchards Farm</h1>
+                <p class="lead" style="color: white; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">We produce organic fruits, tubers and veggies among other products. <br>Explore our <a href="product_list.html/" style="color: #FFD700; text-decoration: underline;">products</a> now!</p>
+                <a href="{% url 'about' %}" class="btn btn-custom btn-lg" style="background-color: #4CAF50; padding: 10px 20px; border-color: white; border-radius: 30px; color: whitesmoke; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">Learn more</a>
             </div>
         </div>
     </div>
 </section>
 
-<section id="what-we-do" class="services section mb-2" style="height: 770px;background-color: white; margin-top: 10px;" >
+
+<section id="what-we-do" class="services section mb-2" style="background-color: white; margin-top: 10px;" >
   <div class="content">
     <div class="container text-center ">
       <h2 class="content-subtitle " style="color:brown; margin-top:80px;margin-bottom: 30px; padding:14px; ">What We Do?</h2>
@@ -142,7 +144,7 @@
 
 
   <!-- Our story -->
-<section id="our-story" class="story section  text-black" style="height: 400px; margin: 120px;">
+<section id="our-story" class="story section h-auto text-black" style="margin: 120px;">
   <div class="container">
     <div class="row gy-4">
         <!-- "Our Story" section comes first -->

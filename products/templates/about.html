@@ -5,43 +5,45 @@
 
 {% block content %}
 <section class="about-hero">
-<div class="hero-section">
-    <div class="hero-overlay">
-        <div class="container-about text-center text-white">
-
-            <h1 class="display-4" style="color:white;">About Us</h1>
-            <hr class="custom-hr mx-auto">
-            <p class="lead m-5">Symon Orchards is a family-owned agribusiness dedicated to providing fresh, high-quality farm products to our community. Our products include apples, borehole water, vegetables, and more. We take pride in sustainable farming practices and delivering the best to our customers.</p>
-
-            <a href="#" class="btn btn-custom btn-lg">Shop with Us</a>
-        </div>
-    </div>
-</div>
-
-</section>
-
-<section class="mission-vision">
- <div class="row justify-content-center mt-5">
-                <div class="col-md-4">
-                    <div class="card text-center mb-4" style="background-color: lightgreen; ">
-                        <div class="card-body">
-                            <h3 class="card-title">Our Mission</h3>
-                            <p>To bridge the gap between farms and families by offering fresh, organic, and responsibly sourced products.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card text-center mb-4" style="background-color: rosybrown">
-                        <div class="card-body">
-                            <h3 class="card-title">Our Vision</h3>
-                            <p>To become a leading agribusiness, known for innovation, quality, and sustainability.</p>
-                        </div>
-                    </div>
+    <div class="container-fluid hero-section">
+        <div class="row">
+            <!-- Left side: Text content -->
+            <div class="col-md-6 d-flex align-items-center mt-5">
+                <div class="hero-content">
+                    <h1 class="display-4">About Us</h1>
+                    <hr class=" text-align-left w-50 ">
+                    <p class="lead m-5">
+                       <span class="drop-can"> S</span>ymon Orchards is a family-owned agribusiness dedicated to providing fresh, organic farm products to our community. Our products include apples,pomegranate,pineapples,vegetables, water and more. We take pride in organic farming practices and delivering the best products to our customers.
+                    </p>
+                    <a href="{% url 'product_list' %}" class="btn btn-custom btn-md  m-3 mt-0 ">Shop with Us</a>
                 </div>
             </div>
+
+            <!-- Right side: Illustration or Image -->
+            <div class="col-md-6 hero-image mt-5 ">
+               <img src="{% static 'images/farmer2.jpg' %}" alt="Farm Illustration" class="img-rounded">
+
+            </div>
+        </div>
+    </div>
 </section>
 
-<section id="what-we-do" class="services section mb-2" style="height: 770px;background-color: whitesmoke; margin-top: 80px;" >
+ <section class="mission-section">
+        <div class="container-mission">
+            <div class="statement-wrapper">
+                <h2 class="statement-title">Our Mission</h2>
+                <p class="statement-text">To provide naturally grown, naturally delicious products that promote health and sustainability.</p>
+            </div>
+            <div class="statement-wrapper">
+                <h2 class="statement-title">Our Vision</h2>
+                <p class="statement-text">To be a leading provider of organic products, inspiring a healthier and more sustainable future for all.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+<section id="what-we-do" class="services section mb-2" style="height: auto;" >
   <div class="content">
     <div class="container text-center ">
       <h2 class="content-subtitle " style="color:brown; margin-top:80px;margin-bottom: 30px; padding:14px; ">What We Do?</h2>
@@ -104,9 +106,9 @@
 
 
 <!-- Our story -->
-<section id="our-story" class="story section bg-light-subtle text-black" style="height: 600px;">
+<section id="our-story" class="story section bg-light-subtle text-black" style="margin-top:80px;height: auto;">
   <div class="container">
-    <div class="row gy-4">
+    <div class="row gy-4 mt-5">
         <!-- "Our Story" section comes first -->
       <div class="col-lg-6 text-black">
         <h2 class="content-title mb-4" style="color:brown;">Our Story</h2>
@@ -139,10 +141,7 @@
         <!-- Image section comes second -->
       <div class="col-lg-6">
         <div class="image-container">
-          <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn">
-            <img src="{% static 'images/img_sq_1.jpg' %}" alt="Our Story Image" class="img-fluid background-image" />
-            <span class="play"><i class="bi bi-play-fill"></i></span>
-          </a>
+                     <img src="{% static 'images/farmers.jpg' %}" alt="Our Story Image" class="img-rounded background-image" />
         </div>
       </div>
 

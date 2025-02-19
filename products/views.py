@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import send_mail
 from django.conf import settings
 from .forms import ContactForm, UserRegistrationForm
@@ -9,6 +9,15 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
+from .models import Contact
+from .models import Product
+from .forms import ProductForm
+from .forms import ContactForm
+
+
+
+
 
 
 # Create your views here.
@@ -83,48 +92,8 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
-
-def product_list(request):
-    return render(request, 'product_list.html')
-
-
 def contact_success(request):
     return render(request, 'contact_success.html')
-
-"""
-#view to handle ContactForm submissions
-def contact_view(request):
-    if request.method == "POST":
-        # Bind the POST data to the form
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            # Save the form data to the database
-            form.save()
-
-            # Send an email notification
-            subject = form.cleaned_data['subject']
-            message = f"Message from {form.cleaned_data['name']} ({form.cleaned_data['email']}):\n\n{form.cleaned_data['message']}"
-            send_mail(
-                subject,
-                message,
-                settings.EMAIL_HOST_USER,
-                [settings.EMAIL_HOST_USER],  # Send to admin email
-                fail_silently=False,
-            )
-
-            # Success message
-            messages.success(request, "Your message has been sent successfully!")
-            return redirect('contact')  # Redirect to the contact page after successful submission
-
-        else:
-            # Form validation error
-            messages.error(request, "There was an error in your form. Please correct it and try again.")
-    else:
-        form = ContactForm()
-
-    return render(request, 'contact.html', {'form': form})
-
-"""
 
 def contact_view(request):
     if request.method == "POST":
@@ -156,3 +125,19 @@ def contact_view(request):
         form = ContactForm()
 
     return render(request, 'contact.html', {'form': form})
+
+
+
+#Products
+#Display products
+
+def product_list(request):
+    products = Product.objects.all().order_by('-updated_at')
+    return render(request, 'product_list.html', {'products': products})
+
+# Display product details
+def product_detail(request, product_id):
+    # Get the product by ID or return a 404 error if not found
+    product = get_object_or_404(Product, id=product_id)
+    return render(request, 'product_detail.html', {'product': product})
+

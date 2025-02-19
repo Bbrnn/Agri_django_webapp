@@ -52,19 +52,27 @@
 
     <!--Font awesome icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
 </head>
 
 <body>
     <!-- Header Section -->
-<header class="navbar navbar-expand-lg ">
-      <div class="container d-flex align-items-center justify-content-between">
+<header class="navbar navbar-expand-lg w-auto h-auto" style="background-color: #4CAF50;">
+
+    <div class="container ">
 
         <!-- Logo and Brand (Aligned to the left) -->
-        <a class="navbar-brand d-flex align-items-center" href="{% url 'index' %}" style="color: white; font-weight: bold;">
-            <img src="{% static 'images/orchardlogo2.jpeg' %}" alt="Logo" style="height: 70px; width: 160px; margin-right: 1px;">
-            Symon Orchards
+        <!-- Logo and Brand (Aligned to the left) -->
+        <a class="navbar-brand" href="{% url 'index' %}" style="color: white; font-weight: bold; margin-left: -90px;">
+         <img src="{% static 'images/212677436.png' %}" alt="Logo" style="margin: 0;width: auto;height: 30px; margin: 0;
+  padding: 0;overflow: hidden; ">
+
         </a>
+
+
+        <!-- Navbar Toggle Button for Mobile -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <!-- Navbar Links (Centered) -->
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
@@ -81,15 +89,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'contact' %}" style="color: white;">Contact</a>
                 </li>
-
             </ul>
-                <!-- Get Started Button (Aligned to the right, brown color) -->
-             <button class="btn" style="background-color: #8B4513; color: white;display:flex;flex-direction:column;">
-             <a href="{% url 'user_register' %}" style="color: white; text-decoration: none;">Get Started</a>
-             </button>
+        </div>
+
+        <!-- Get Started Button (Aligned to the right, gold color) -->
+        <div class="d-flex align-items-center">
+            <a href="{% url 'user_register' %}" class="btn btn-custom btn-sm" style="background-color: #FFD700; color: white; text-decoration: none; border-radius: 30px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">Get Started</a>
         </div>
     </div>
-
 </header>
 
     <!-- Main Content Section -->
@@ -133,12 +140,12 @@
     <div class="col-md-6">
         <h5 class="text-uppercase mb-3" style="color:green;">Quick Links</h5>
 
-        <ul class="list-unstyled">
-            <li><a href="{% url 'index' %}" class="text-decoration-none text-white">Home</a></li>
-            <li><a href="{% url 'about' %}" class="text-decoration-none text-white">About Us</a></li>
-            <li><a href="{% url 'contact' %}" class="text-decoration-none text-white">Contact</a></li>
-            <li><a href="{% url 'product_list' %}" class="text-decoration-none text-white">Products</a></li>
-            <li><a href="#" class="text-decoration-none text-white">Get Started</a></li>
+        <ul class="list-unstyled justify-content-center align-items-center text-center" style="display:flex;">
+            <li><a href="{% url 'index' %}" class="text-decoration-underline text-white">Home</a></li>
+            <li><a href="{% url 'about' %}" class="text-decoration-underline text-white">About Us</a></li>
+            <li><a href="{% url 'contact' %}" class="text-decoration-underline text-white">Contact</a></li>
+            <li><a href="{% url 'product_list' %}" class="text-decoration-underline text-white">Products</a></li>
+
         </ul>
     </div>
 </div>
@@ -147,12 +154,13 @@
 
 
     <h4 style="color:green;">Follow us on:</h4>
-    <a>
-                <a href="#"><i class="bi-youtube">Youtube</i></a> |
-                <a href="#"><i class="bi-facebook">Facebook</i></a> |
-                <a href="#"><i class="bi-instagram">Instagram</i></a> |
-                <a href="#"><i class="bi-twitter-x">Twitter</i></a>
-        </a>
+    <div class="social-media">
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube fa-1x" style="color: #ff0000;"></i></a>
+                <a href="#"><i class="bi-facebook" style="color: #3b5998;"></i></a>
+                <a href="#"><i class="bi-instagram" style="color: #e4405f;"></i></a>
+                <a href="#"><i class="bi-twitter-x" style="color: #1da1f2;"></i></a>
+    </div>
+
 
         <div class="mt-3 social-links order-first order-lg-last mb-1">
             <p>&copy; 2025  Symon Orchards. All Rights Reserved.</p>
@@ -162,7 +170,6 @@
 
 
       <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static '/css/bootstrap/js/bootstrap.bundle.min.js' %}" defer></script>
     <script src="{%  static '/css/aos/aos.js' %}"></script>
     <script src="{% static '/css/glightbox/js/glightbox.min.js' %}"></script>

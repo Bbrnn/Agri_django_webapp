@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container mt-4 h-auto mb-5">
+        <h2 class="text-center mb-4">{{ product.name }}</h2>
+
+        <div class="card shadow-sm">
+            <div class="row g-0 ">
+                <!-- Left side: Image -->
+                <div class="col-md-4  ">
+                    <img src="{{ product.image.url }}" class="img-fluid w-75" alt="{{ product.name }}" style="height: auto ;margin:12px; object-fit: cover;">
+                </div>
+
+                <!-- Right side: Text Content -->
+                <div class="col-md-8 mt-4">
+                    <div class="card-body">
+                        <h4>Description</h4>
+
+                        <p class="card-text">{{ product.description }}</p>
+                        <p class="card-text">Price: Kes {{ product.price }}</p>
+                        <p class="card-text">Stock: {{ product.stock }}</p>
+                        <a href="#" class="btn btn-custom">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -59,7 +59,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 #ALLOWED_HOSTS = []
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost', '127.0.0.1'])
@@ -168,6 +168,15 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # For flashing messages
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+
+# Define the location where media files will be stored
+MEDIA_URL = '/media/'  # URL for serving media files in the browser
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Directory where files will be saved
+
+
+
+
 
 
 

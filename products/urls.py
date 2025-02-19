@@ -17,7 +17,8 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 from  products import views
@@ -32,9 +33,21 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('product_list/', views.product_list, name='product_list'),
+
     path('contact/', views.contact_view, name='contact'),
     #path('contact/success/', views.contact_success, name='contact_success'),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+
+    path('<int:product_id>/', views.product_detail, name='product_detail'),
+    #path('create/', views.product_create, name='product_create'),
+    #path('<int:product_id>/update/', views.product_update, name='product_update'),
+    #path('<int:product_id>/delete/', views.product_delete, name='product_delete'),
 
 
 ]
+
+
+
+# Serve media files in development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -20,23 +20,49 @@
 
 
 {% block content %}
+<section class="contact-hero " style="background: whitesmoke; height: auto; padding: 40px;">
+    <div class="container d-flex justify-content-between">
+        <div class="col-md-6 text-content">
+            <h1 class="display-5 mt-4" style="font-weight: 600; color:brown;">Contact Us</h1>
+            <p class="lead">Have questions? Get in touch with us today!</p>
+            <a href="#" class="btn btn-custom">Reach Out</a>
+        </div>
 
-<section id="title" class="page-title section justify-content-center ">
-<div class="page-title  text-black" style="height:300px;background-image: url('{% static 'images/page-title-bg.webp' %}');">
-      <div class="container text-center position-relative">
-        <h1 >Contact Us</h1>
-          <p>Have Questions? Reach out to us!</p>
-          <p> 0725 550 536</p>
-          <p>orchardsfarmltd23@gmail.com</p>
+       <div class="col-md-6 mb-2 d-flex justify-content-end" style="margin-right: 5px;">
+    <div class="d-flex flex-column justify-content-between" style="width: 100%;">
+        <!-- Phone Icon -->
+        <div class="phone-icon mb-4 text-center">
+            <a href="tel:+254768606502" class="btn">
+                <i class="fas fa-phone-alt fa-5x" style="color:green;"></i> Call Us
+            </a>
+        </div>
 
-
-    </div><!-- End Page Title -->
+        <!-- Social Media Icons -->
+        <div class="social-icons mt-auto align-self-center">
+            <a href="https://www.facebook.com" class="btn" target="_blank">
+                <i class="fab fa-facebook fa-2x" style="color: #3b5998;"></i>
+            </a>
+            <a href="https://www.twitter.com" class="btn" target="_blank">
+                <i class="fab fa-twitter fa-2x" style="color: #1da1f2;"></i>
+            </a>
+            <a href="https://www.instagram.com" class="btn" target="_blank">
+                <i class="fab fa-instagram fa-2x" style="color: #e4405f;"></i>
+            </a>
+            <a href="https://www.linkedin.com" class="btn" target="_blank">
+                <i class="fab fa-linkedin fa-2x" style="color: #0077b5;"></i>
+            </a>
+            <a href="https://www.youtube.com" class="btn" target="_blank">
+                <i class="fab fa-youtube fa-2x" style="color: #ff0000;"></i>
+            </a>
+        </div>
+    </div>
 </div>
+    </div>
 </section>
 
-  <div class="mb-5 mt-3">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255341.68552867745!2d36.15518221533803!3d-0.41465492209980326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182909033060f4b9%3A0x9f0dae376a3055c7!2sMURINDATI%20PRIMARY%20SCHOOL!5e0!3m2!1sen!2ske!4v1736999347782!5m2!1sen!2ske" width="600" height="450" style="width: 100%; height: 400px;border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
+
+
+<hr style="width: 90%;margin: 0 auto;height: 5px;background-color: black;">
 
  <section id="contact" class="contact section py-5">
     <div class="container">
@@ -72,17 +98,34 @@
 
         <!-- Contact Form -->
         <div class="col-lg-8 h-75">
-          <div class="card h-75" style="border:none;">
+            <h4>Our location on the map:</h4>
+
+         <div class="mb-5 mt-3">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6378270555856!2d36.363718399999996!3d-0.5449959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1f001d2814e5%3A0x6a62807d942d689a!2sSymon%20Orchards%20Farm!5e0!3m2!1sen!2ske!4v1739888143454!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+
+{% endblock %}
+
+
+<!-- contact form
+
+<div class="card h-75" style="border:none;">
             <div class="card-body" >
               <h4 class="card-title mb-2" style="color:green;"  >Reach Out</h4>
               <form  method="post" role="form" class="php-email-form">
-                {% csrf_token %}
-                   <!-- Display form-level errors -->
-                   {% if form.errors %}
+
                     <div class="alert alert-danger">
                        <strong>Error!</strong> Please correct the errors below.
                      </div>
-                   {% endif %}
 
 
                 <div class="mb-3">
@@ -115,13 +158,4 @@
 
             </div>
           </div>
-        </div>
-      </div>
-
-
-
-    </div>
-  </section>
-
-
-{% endblock %}
+-->

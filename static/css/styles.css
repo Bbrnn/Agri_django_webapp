@@ -5,6 +5,9 @@
 }
 body {
     font-family: 'Inter', 'inter', 'JetBrains Mono', 'JetBrains', 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
 
 }
 p{
@@ -25,27 +28,50 @@ h1{
 }
 
 h1,h2,h3,h4,h5,h6{
-    font-family: lora, serif;
+    font-family: roboto serif;
 
 }
+
 
 a {
-  color: #2ea359;
-  text-decoration: none;
-  transition: 0.3s;
-  cursor:pointer;
+  position: relative;
+}
+.nav-link{
+    justify-content:space-evenly;
 }
 
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+  }
 
-a:hover {
-  background-color:  brown;
-  text-decoration: none;
-  transition: 0.34ms;
+.nav-link:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+.active {
+  background-color: gold;
 }
 
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
 
 .card:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+     /* transform: scale(1.05); Slight zoom on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
   }
 
@@ -79,20 +105,25 @@ a:hover {
 
 
 .btn-custom {
-    background-color: green !important;
-    border-color: brown !important;
-    color: white !important;
-    transition: border 0.3s ease-in-out;
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: 2px solid #FFD700 ; /* Gold border color */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+    }
+
+.btn-custom:hover {
+    background-color: #FFD700; /* Change background to gold on hover */
+    color: #4CAF50; /* Change text color to green on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
-.btn-custom:hover,
-.btn-custom:focus,
-.btn-custom:active,
-.btn-custom.active,
-.open > .dropdown-toggle.btn-custom {
-    background-color: brown !important;
-    border-color: green !important;
-    color: white !important;
+.btn-custom:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.5); /* Custom focus outline */
 }
 
 /* Custom styles for the form */
@@ -161,58 +192,61 @@ a:hover {
 
 
 /*About us*/
-{}
-/*About h/* Hero Section */
-.hero-section {
-    position: relative;
-     background: linear-gradient(to bottom,
-    rgba(76, 175, 80, 1),  /* Main Green */
-    rgba(255, 255, 255, 0.7), /* White (Transitional) */
-    rgba(139, 69, 19, 1), /* Brown */
-    rgba(144, 238, 144, 1) /* Light Green at the bottom */
-  );
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* About Hero Section */
+
+.container{
+    padding: 20px;
+}
+.about-hero {
+    background-color: #f8f9fa;  /* Light background for the hero section */
+    padding: 20px 0;
+
 }
 
-/* Overlay */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+.hero-section {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    min-height: 350px;
+}
+
+.hero-content {
+    margin-left: 20px;
+    padding: 20px;
+
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.4); /* Optional: if you want to darken the background */
     padding: 20px;
 }
 
-/* Text Styling */
-.hero-section h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #fff;
-}
-
-.hero-section p {
-    font-size: 1.25rem;
-    margin-bottom: 30px;
-}
-
-
-
-/*hr styling*/
 .custom-hr {
-   /* Remove default border */
-   border:none;
-  height: 10px; /* Set the thickness of the line */
-  background-color: brown; /* Set the color of the line */
-  width: 4%; /* Set the width of the line to 50% of the container */
+    width: 80px;
+    height: 2px;
+    background-color: #6c757d;
+    margin: 20px auto;
 }
+
+.hero-image img {
+    width: auto;
+    height: 400px;
+    border:none;
+
+
+
+}
+/*drop cas in Symon*/
+.drop-can{
+  color: green;
+  float: left;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+}
+
 /*the team social handles*/
 .social{
   display: flex;
@@ -220,115 +254,44 @@ a:hover {
   gap: 20px; /*  Adds space between icons */
 }
 
-
-
-/* end of hero section*/
-
-/*our story video*/
-
-/* Pulsating Play Button
-------------------------------*/
-/* Make the whole area clickable */
-.pulsating-play-btn {
-  display: block;
-  position: relative;
-  width: 80%;
-  height: 70%;
-  background-size: cover;
-  background-position: center;
-  text-decoration: none;
+.mission-section {
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
 }
 
-/* Background image for the link */
-.pulsating-play-btn .background-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-
-
-
+.container-mission {
+    width: 90%;
+    margin: 0 auto;
+    height: 400px;
 }
 
-/* Play button */
-.pulsating-play-btn .play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
-  color: #fff;
-  z-index: 10;
-  animation: pulsate-play-btn 2s infinite ease-out;
-
+.statement-wrapper {
+    background-color: green;
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Pulsating Play Button */
-.pulsating-play-btn:before {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  animation: pulsate-play-btn 2s infinite ease-out;
-  opacity: 1;
-  border-radius: 50%;
-  border: 5px solid color-mix(in srgb, white, transparent 30%);
-  top: -15%;
-  left: -15%;
-  background: rgba(198, 16, 0, 0);
+.statement-title {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-.pulsating-play-btn:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(10%) translateY(10%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 100;
-  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+.statement-text {
+    font-size: 18px;
 }
 
-.pulsating-play-btn:hover:before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border: none;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 200;
-  animation: none;
-  border-radius: 0;
+
+
+/*Product */
+/*product details text*/
+.product-details{
+    color:brown;
+    font-size: 18px;
 }
-
-.pulsating-play-btn:hover:after {
-  border-left: 15px solid green;
-  transform: scale(5);
-}
-
-@keyframes pulsate-play-btn {
-  0% {
-    transform: scale(0.6, 0.6);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1, 1);
-    opacity: 0;
-  }
-}
-
-/*registration and login form*/
-
 
 
 
@@ -346,14 +309,10 @@ footer {
     color: white;
 }
 
-
-
-
-
 footer a {
+
     text-decoration: none;
-    padding: 14px;
-    color:brown;
+    padding: 10px;
 }
 
 footer a:hover {
