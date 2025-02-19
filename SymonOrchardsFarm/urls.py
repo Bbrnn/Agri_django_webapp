@@ -30,5 +30,6 @@ urlpatterns = [
 ]
 
 # Serve static files in production (only when DEBUG is False)
-if not settings.DEBUG:
+if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

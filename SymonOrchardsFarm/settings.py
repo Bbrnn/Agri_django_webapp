@@ -170,9 +170,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 
-# Define the location where media files will be stored
-MEDIA_URL = '/media/'  # URL for serving media files in the browser
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Directory where files will be saved
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 

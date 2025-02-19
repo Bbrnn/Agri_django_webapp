@@ -116,7 +116,7 @@ a {
     }
 
 .btn-custom:hover {
-    background-color: #FFD700; /* Change background to gold on hover */
+    background-color: brown; /* Change background to gold on hover */
     color: #4CAF50; /* Change text color to green on hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
@@ -255,7 +255,7 @@ a {
 }
 
 .mission-section {
-    background-color: #fff;
+    background-color: white;
     padding: 40px 0;
     text-align: center;
 }
@@ -263,7 +263,7 @@ a {
 .container-mission {
     width: 90%;
     margin: 0 auto;
-    height: 400px;
+
 }
 
 .statement-wrapper {
@@ -278,15 +278,17 @@ a {
 .statement-title {
     font-size: 24px;
     margin-bottom: 10px;
+
 }
 
 .statement-text {
     font-size: 18px;
 }
 
-
-
 /*Product */
+
+/*Product list images*/
+
 /*product details text*/
 .product-details{
     color:brown;
