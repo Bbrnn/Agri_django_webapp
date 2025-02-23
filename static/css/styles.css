@@ -200,6 +200,7 @@ a {
 .about-hero {
     background-color: #f8f9fa;  /* Light background for the hero section */
     padding: 20px 0;
+    width: auto;
 
 }
 
@@ -309,6 +310,10 @@ footer {
 .jumbotron a.btn-lg:hover {
     background-color:black;
     color: white;
+}
+.footer{
+    height:auto;
+
 }
 
 footer a {
