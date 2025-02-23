@@ -27,7 +27,11 @@ urlpatterns = [
     path('auth/', include('django.contrib.auth.urls')),
 
     path('',include('products.urls')),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+
 
 # Serve static files in production (only when DEBUG is False)
 if settings.DEBUG:

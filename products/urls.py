@@ -44,10 +44,4 @@ urlpatterns = [
     #path('<int:product_id>/delete/', views.product_delete, name='product_delete'),
 
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-
-# Serve media files in development
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
