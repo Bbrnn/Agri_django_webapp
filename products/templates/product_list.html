@@ -1,25 +1,54 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="container mt-4 ">
+<style>
+    .card {
+        background: white;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+    }
+
+    .card:hover {
+        transform: scale(1.03);
+        border:1px solid green;
+    }
+
+    .card-img-top {
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+    }
+
+    .card-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+</style>
+
+<div class="container mt-4">
     <h2 class="text-center mb-4">Available Products</h2>
 
-    <div class="row">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
 
         {% for product in products %}
-            <div class="col-md-4 mb-4" >  <!-- 3 columns per row -->
-                <div class="card-products shadow-sm h-100 " style="background: white;">
-                    <img src="{{ product.image.url }}" class="card-img-top w-100  justify-content-center align-content-center" alt="{{ product.name }}" style="height: 200px;  object-fit: cover;">
+            <div class="col d-flex align-items-stretch">
+                <div class="card shadow-sm w-100">
+                    <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
                     <div class="card-body">
-                        <h4 class="card-title"> {{ product.name }}</h4><br>
-                        <p class="card-text"><span class="product-details">Price: </span>Kes {{ product.price }}</p>
-                        <p class="card-text "> Stock: {{ product.stock }}</p>
+                        <h4 class="card-title">{{ product.name }}</h4>
+                        <p class="card-text"><strong>Price:</strong> Kes {{ product.price }}</p>
+                        <p class="card-text"><strong>Stock:</strong> {{ product.stock }}</p>
                         {% if product.id %}
-                        <a href="{% url 'product_detail' product.id %}" class="btn btn-custom mt-5">View Details</a>
+                        <a href="{% url 'product_detail' product.id %}" class="btn btn-custom mt-auto">View Details</a>
                         {% else %}
-                         <p>Product is missing!</p>
+                         <p class="text-danger">Product is missing!</p>
                         {% endif %}
-
                     </div>
                 </div>
             </div>
@@ -28,8 +57,7 @@
                 <p class="text-center">No products available.</p>
             </div>
         {% endfor %}
+
     </div>
-
-
 </div>
 {% endblock %}

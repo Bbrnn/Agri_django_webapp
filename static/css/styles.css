@@ -14,15 +14,7 @@ p{
       font: 400 16px/1.5 Proxima Nova,proxima-nova,Helvetica Neue,Helvetica,Arial,sans-serif;
 
 }
-header {
-    background-color: green;
-    padding: 20px;
-    cursor: pointer;
-    justify-content: space-between;
 
-
-
-}
 h1{
     font-weight: bolder;
 }
@@ -31,6 +23,59 @@ h1,h2,h3,h4,h5,h6{
     font-family: roboto serif;
 
 }
+/* Header Styling */
+header.navbar {
+    background-color: green; /* Header background */
+    cursor: pointer;
+    height:70px;
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+
+
+/* Logo Styling */
+.navbar-brand img {
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Add some space after the logo */
+    object-fit: contain;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    color: white !important;
+    font-size: 16px; /* Adjust font size */
+
+}
+
+/* Center Navbar */
+.navbar-collapse {
+    justify-content: center;
+}
+
+/* Get Started Button */
+.btn-custom {
+    background-color: #FFD700;
+    color: white;
+    border-radius: 30px;
+
+    font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+    .navbar-collapse {
+        justify-content: flex-start;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
 
 
 a {
