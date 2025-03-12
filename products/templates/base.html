@@ -78,9 +78,16 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
             </ul>
         </div>
-         <a href="#" class="nav-link me-3">
+        <!-- Cart Icon with Item Count -->
+        <a href="{% url 'view_cart' %}" class="cart-icon me-3 position-relative">
             <i class="fas fa-shopping-cart fa-lg"></i>
+            {% if request.session.cart %}
+                <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">
+                    {{ request.session.cart|length }}
+                </span>
+            {% endif %}
         </a>
+
 
 
         <!-- Get Started Button -->

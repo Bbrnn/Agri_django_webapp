@@ -21,7 +21,8 @@
                         <p class="card-text">{{ product.description }}</p>
                         <p class="card-text"><strong>Price:</strong> Kes {{ product.price }}</p>
                         <p class="card-text"><strong>Stock:</strong> {{ product.stock }}</p>
-                        <a href="#" class="btn btn-custom mt-3">Add to Cart</a>
+                        <a href="{% url 'add_to_cart' product.id %}" class="btn btn-custom">Add to Cart</a>
+
                     </div>
                 </div>
 

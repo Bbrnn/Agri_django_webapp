@@ -17,6 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from .views import view_cart
+from .views import add_to_cart
+from .views import remove_from_cart
+from .views import clear_cart
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -39,9 +43,17 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('<int:product_id>/', views.product_detail, name='product_detail'),
-    #path('create/', views.product_create, name='product_create'),
-    #path('<int:product_id>/update/', views.product_update, name='product_update'),
-    #path('<int:product_id>/delete/', views.product_delete, name='product_delete'),
+
+    #Cart functionality
+
+    path('cart/', view_cart, name='view_cart'),
+    path('cart/add/<int:product_id>/', add_to_cart, name='add_to_cart'),
+    path('cart/remove/<int:product_id>/', remove_from_cart, name='remove_from_cart'),
+    path('cart/clear/', clear_cart, name='clear_cart'),
+
+
+
+
 
 
 ]

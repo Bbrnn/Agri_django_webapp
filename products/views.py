@@ -7,6 +7,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.http import JsonResponse
 from django.http import HttpResponse
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
@@ -140,4 +141,50 @@ def product_detail(request, product_id):
     # Get the product by ID or return a 404 error if not found
     product = get_object_or_404(Product, id=product_id)
     return render(request, 'product_detail.html', {'product': product})
+
+
+#CART FUNCTIONALITY
+def add_to_cart(request, product_id):
+    cart = request.session.get('cart', {})
+
+    if product_id in cart:
+        cart[product_id] += 1
+    else:
+        cart[product_id] = 1
+
+    request.session['cart'] = cart
+    request.session.modified = True  # Ensures session data is saved
+    return redirect('view_cart')
+
+def view_cart(request):
+    cart = request.session.get('cart', {})
+    cart_items = []
+
+    for product_id, quantity in cart.items():
+        product = get_object_or_404(Product, id=product_id)
+        cart_items.append({
+            'product': product,
+            'quantity': quantity,
+            'total_price': product.price * quantity
+        })
+
+    return render(request, 'cart.html', {'cart_items': cart_items})
+
+def remove_from_cart(request, product_id):
+    cart = request.session.get('cart', {})
+
+    product_id = str(product_id)  # Convert to string for consistent session key
+
+    if product_id in cart:
+        del cart[product_id]  # Remove item from cart
+        request.session['cart'] = cart
+        request.session.modified = True  # Mark session as modified
+
+    return redirect('view_cart')
+
+
+def clear_cart(request):
+    request.session['cart'] = {}
+    request.session.modified = True
+    return redirect('view_cart')
 
