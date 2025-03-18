@@ -21,6 +21,7 @@ h1{
 
 h1,h2,h3,h4,h5,h6{
     font-family: roboto serif;
+    color: #11643C;
 
 }
 /* Header Styling */
@@ -49,32 +50,17 @@ header.navbar {
 
 }
 
-/* Center Navbar */
-.navbar-collapse {
-    justify-content: center;
-}
+
 
 /* Get Started Button */
 .btn-custom {
-    background-color: #FFD700;
-    color: white;
-    border-radius: 30px;
-
+    background-color: green;
+    color: black;
     font-weight: bold;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
-    .navbar {
-        flex-wrap: wrap;
-    }
-    .navbar-collapse {
-        justify-content: flex-start;
-    }
-    .navbar-nav {
-        text-align: center;
-    }
-}
+
+
 
 
 
@@ -85,35 +71,18 @@ a {
     justify-content:space-evenly;
 }
 
-.nav-link::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    border-radius: 4px;
-    background-color: #18272F;
-    bottom: 0;
-    left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .3s ease-in-out;
-  }
-
 .nav-link:hover::before {
   transform-origin: left;
   transform: scaleX(1);
 }
-.active {
-  background-color: gold;
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.navbar #navbarNav {
+  display: none;
 }
 
-/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-@media screen and (max-width: 500px) {
-    .navbar a {
-        float: none;
-        display: block;
-    }
-}
+
+
 
 .card:hover {
      /* transform: scale(1.05); Slight zoom on hover */
@@ -149,21 +118,9 @@ a {
     }
 
 
-
-.btn-custom {
-    background-color: #4CAF50; /* Green background color */
-    color: white; /* Text color */
-    padding: 10px 20px; /* Padding for the button */
-    border: 2px solid #FFD700 ; /* Gold border color */
-    border-radius: 4px; /* Rounded corners */
-    text-decoration: none; /* Remove underline from text */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
-    }
-
 .btn-custom:hover {
-    background-color: brown; /* Change background to gold on hover */
-    color: #4CAF50; /* Change text color to green on hover */
+    background-color: #11643C;
+    color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
@@ -339,10 +296,15 @@ a {
 
 /*product details text*/
 .product-details{
-    color:brown;
+    color:white;
     font-size: 18px;
 }
 
+/*Cart*/
+.fa-shopping-cart{
+    color: white;
+
+}
 
 
 footer {

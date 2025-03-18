@@ -25,9 +25,11 @@
     <div class="container position-relative">
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-10" style="text-align: center;">
-                <h1 class="display-4" style="color: white; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">Welcome to Symon Orchards Farm</h1>
-                <p class="lead" style="color: white; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">We produce organic fruits, tubers and veggies among other products. <br>Explore our <a href="product_list.html/" style="color: #FFD700; text-decoration: underline;">products</a> now!</p>
-                <a href="{% url 'about' %}" class="btn btn-custom btn-md" style="background-color: #4CAF50; padding: 10px 20px; border-color: white; border-radius: 30px; color: whitesmoke; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">Learn more</a>
+                <h1 class="display-3" style="color: white; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">Nourishing Communities with Fresh, Organic Produce</h1>
+                <p class="lead" style="color: white; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">At Symon Orchards Farm, we cultivate high-quality organic fruits, tubers, and vegetables.<br> Experience the richness of organic farming. Explore our  <a href="u{% url 'product_list' %}" style="color: #FFD700; text-decoration: underline;">products</a> now!</p>
+
+                <a href="{% url 'about' %}" class="btn btn-md" style="background-color: #11643C; padding: 10px 20px;  color: whitesmoke; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">About Us</a>
+                <a href="{% url 'product_list' %}" class="btn btn-md" style="background-color: white; padding: 10px 20px; border-color: #11643C; color: #11643C; font-weight:bold; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">Shop Now</a>
             </div>
         </div>
     </div>
@@ -149,7 +151,7 @@
 
 
   <!-- Our story -->
-<section id="our-story" class="story section h-auto text-black" style="margin: 120px;">
+<section id="our-story" class="story section h-auto w-auto text-black" style="">
   <div class="container">
     <div class="row gy-4">
         <!-- "Our Story" section comes first -->

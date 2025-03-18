@@ -15,6 +15,9 @@ from .models import Contact
 from .models import Product
 from .forms import ProductForm
 from .forms import ContactForm
+from django.views.decorators.csrf import csrf_exempt
+import base64
+import json
 
 
 

@@ -50,28 +50,38 @@
     <link href="{% static 'css/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
 
+
     <!--Font awesome icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+ <style>
+        /* Remove black border around hamburger */
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+    </style>
+
 </head>
 
 <body>
-    <header class="navbar navbar-expand-lg w-auto " >
-
+<header class="navbar navbar-expand-lg w-auto " >
     <div class="container d-flex align-items-center justify-content-between p-0">
 
         <!-- Logo -->
         <a class="navbar-brand" href="{% url 'index' %}">
             <img src="{% static 'images/212677436.png' %}" alt="Logo" style="height: 60px;">
         </a>
-
-        <!-- Navbar Toggle Button for Mobile -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
+
+
+
+
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
+            <ul class="navbar-nav mx-auto d-flex justify-content-center align-items-center gap-2 gap-xl-3 fs-1">
                 <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'product_list' %}">Products</a></li>
@@ -80,7 +90,7 @@
         </div>
         <!-- Cart Icon with Item Count -->
         <a href="{% url 'view_cart' %}" class="cart-icon me-3 position-relative">
-            <i class="fas fa-shopping-cart fa-lg"></i>
+            <i class="fas fa-shopping-cart fa-lg "></i>
             {% if request.session.cart %}
                 <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">
                     {{ request.session.cart|length }}
@@ -91,8 +101,13 @@
 
 
         <!-- Get Started Button -->
-        <a href="{% url 'user_register' %}" class="btn btn-sm btn-custom">Get Started</a>
+        <a href="{% url 'user_register' %}" class="btn btn-custom btn-lg  d-none d-md-block px-4 py-2" >Get Started</a>
+
+    <!-- Navbar Toggle Button for Mobile -->
+
+
     </div>
+
 </header>
 
     <!-- Main Content Section -->
@@ -100,13 +115,11 @@
         {% block content %}
         <!-- Page-specific content will be inserted here -->
         {% endblock %}
-    </main>
-
-
-     <!-- Floating Action Button -->
-     <button id="scrollToTopBtn" class="btn btn-custom btn-sm " style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: none;">
+      <!-- Floating Action Button -->
+     <button id="scrollToTopBtn" class="btn btn-custom btn-sm" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: none;">
         <i class="bi bi-arrow-up"></i>
     </button>
+    </main>
 
     <!-- JavaScript for the floating action button -->
     <script>
@@ -126,6 +139,23 @@
         scrollToTopBtn.onclick = function() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         };
+    </script>
+
+      <!-- JavaScript -->
+    <script src="{% static '/css/bootstrap/js/bootstrap.bundle.min.js' %}" defer></script>
+
+    <script src="{%  static '/css/aos/aos.js' %}"></script>
+    <script src="{% static '/css/glightbox/js/glightbox.min.js' %}"></script>
+    <script>
+            const lightbox = GLightbox({
+                selector: '.glightbox',
+                touchNavigation: true,
+                loop: true,
+            });
+    </script>
+
+    <script>
+             AOS.init();
     </script>
 
 
@@ -163,25 +193,6 @@
         </div>
 
 </footer>
-
-
-      <!-- JavaScript -->
-    <script src="{% static '/css/bootstrap/js/bootstrap.bundle.min.js' %}" defer></script>
-
-    <script src="{%  static '/css/aos/aos.js' %}"></script>
-    <script src="{% static '/css/glightbox/js/glightbox.min.js' %}"></script>
-    <script>
-            const lightbox = GLightbox({
-                selector: '.glightbox',
-                touchNavigation: true,
-                loop: true,
-            });
-    </script>
-
-    <script>
-             AOS.init();
-    </script>
-
 
 
 

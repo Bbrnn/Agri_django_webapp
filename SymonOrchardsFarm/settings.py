@@ -22,11 +22,32 @@ import os
 
 import environ
 env = environ.Env()
+
 environ.Env.read_env()
 # Set the path for the .env file
 
 env_path = Path(__file__).resolve().parent.parent / '.env'
 print(f'.env file path: {env_path}')  # This will print the absolute path
+
+from decouple import config
+"""
+MPESA_CONSUMER_KEY = config("MPESA_CONSUMER_KEY")
+MPESA_CONSUMER_SECRET = config("MPESA_CONSUMER_SECRET")
+MPESA_SHORTCODE = config("MPESA_SHORTCODE")
+MPESA_PASSKEY = config("MPESA_PASSKEY")
+MPESA_ENV = config("MPESA_ENV", default="sandbox")
+"""
+# Load variables
+DARAJA_CONSUMER_KEY = env("DARAJA_CONSUMER_KEY", default="")
+DARAJA_CONSUMER_SECRET = env("DARAJA_CONSUMER_SECRET", default="")
+DARAJA_SHORTCODE = env("DARAJA_SHORTCODE", default="174379")  # Default sandbox shortcode
+DARAJA_PASSKEY = env("DARAJA_PASSKEY", default="")
+CALLBACK_URL = env("CALLBACK_URL", default="https://yourdomain.com/stk_push_callback/")
+
+TEST_PHONE = env("DARAJA_TEST_PHONE", default="254708374149")
+
+
+
 
 env.read_env(env_path)
 # Now check if the variables are being read

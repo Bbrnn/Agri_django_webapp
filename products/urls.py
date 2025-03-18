@@ -21,6 +21,7 @@ from .views import view_cart
 from .views import add_to_cart
 from .views import remove_from_cart
 from .views import clear_cart
+
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -50,6 +51,8 @@ urlpatterns = [
     path('cart/add/<int:product_id>/', add_to_cart, name='add_to_cart'),
     path('cart/remove/<int:product_id>/', remove_from_cart, name='remove_from_cart'),
     path('cart/clear/', clear_cart, name='clear_cart'),
+
+    #CHECKOUT AND SAFARICOM API
 
 
 
