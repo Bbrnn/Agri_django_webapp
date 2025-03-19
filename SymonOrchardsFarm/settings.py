@@ -56,12 +56,13 @@ env.read_env(env_path)
 #print(env('DATABASE_NAME'))
 # Get environment type
 
-ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
+
+ENVIRONMENT = env('ENVIRONMENT', default='development')
 
 # Access the environment variables
 
 if ENVIRONMENT == 'production':
-    DATABASE_URL = os.getenv('DATABASE_URL')
+    DATABASE_URL = env('DATABASE_URL')
     DATABASES = {
         'default': dj_database_url.parse(DATABASE_URL)
     }
@@ -74,7 +75,12 @@ else:
             'PASSWORD': env('DATABASE_PASSWORD'),
             'HOST': env('DATABASE_HOST'),
             'PORT': env('DATABASE_PORT'),
+            'OPTIONS': {
+                'charset': 'utf8mb4',
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            },
         }
+
     }
 
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
