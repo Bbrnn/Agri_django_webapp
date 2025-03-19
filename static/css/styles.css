@@ -8,6 +8,7 @@ body {
     background-color: #ffffff;
     margin: 0;
     padding: 0;
+    width:auto;
 
 }
 p{
@@ -22,20 +23,67 @@ h1{
 h1,h2,h3,h4,h5,h6{
     font-family: roboto serif;
     color: #11643C;
+    width:100%;
 
 }
+/*General responsiveness*/
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* Ensure images and sections fit */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.container-fluid, .container {
+    width: 100%;
+    max-width: 100%;
+}
+/* Small screens (black background for collapsible content) */
+@media (max-width: 992px) { /* Adjust breakpoint as needed */
+    .navbar-collapse {
+        background-color: black;
+    }
+}
+.collapse {
+    z-index: 1000;
+}
+
+@media (max-width: 576px) { /* Small screens */
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .btn-custom {
+        width: 100%;
+    }
+}
+
+
 /* Header Styling */
-header.navbar {
-    background-color: green; /* Header background */
-    cursor: pointer;
-    height:70px;
-    display: flex;
-    align-items: center; /* Align items vertically */
-    justify-content: space-between;
-    padding: 5px 20px;
+.navbar{
+    background: green;
 }
-
-
 /* Logo Styling */
 .navbar-brand img {
     width: auto; /* Maintain aspect ratio */
@@ -126,11 +174,12 @@ a {
 
 /* Custom styles for the form */
 .php-email-form {
-    max-width: 800px;
+    height:auto;
     padding: 30px;
     background-color: #fffffd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Form input fields */
@@ -191,17 +240,51 @@ a {
 
 /*About us*/
 /* About Hero Section */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 
-.container{
-    padding: 20px;
+
 }
+
+
 .about-hero {
     /*background-color: #f8f9fa; Light background for the hero section */
     background: radial-gradient(circle, rgb(122, 220, 180) 10%, rgb(0, 208, 130) 50%, rgb(0, 150, 90) 100%);
-    padding: 20px 0;
-    width: auto;
+    padding: 50px 0; /* Add top and bottom padding for spacing */
+}
+
+.hero-section .row {
+    display: flex; /* Use Flexbox for alignment */
+    align-items: center; /* Vertically align columns */
 
 }
+
+.hero-content {
+    margin: 0 auto;
+
+}
+
+.hero-image img {
+    max-width: 90%; /* Scale the image within its container */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Optional: Adjust padding and alignment for smaller screens */
+@media (max-width: 768px) {
+    .hero-content {
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    .hero-image img {
+        max-width: 100%; /* Full width for smaller screens */
+    }
+}
+
 
 .hero-section {
     display: flex;
@@ -210,11 +293,6 @@ a {
     min-height: 350px;
 }
 
-.hero-content {
-    margin-left: 20px;
-    padding: 20px;
-
-}
 
 .hero-overlay {
     background: rgba(0, 0, 0, 0.4); /* Optional: if you want to darken the background */
@@ -246,6 +324,40 @@ a {
   padding-right: 8px;
   padding-left: 3px;
 }
+#our-story {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100vh;
+    text-align: center;
+}
+.background-image {
+    width: 70%;
+    max-width: 100%;
+    height: auto;
+    padding-right: 0;
+}
+
+@media (min-width: 768px) {
+    #our-story {
+        margin-left: 40px; /* Larger left margin for medium screens and above */
+        min-height: 500px; /* Increase height on medium screens */
+    }
+}
+
+@media (min-width: 992px) {
+    #our-story {
+        margin-left: 60px; /* Even larger margin for large screens */
+        min-height: 600px; /* Larger height on large screens */
+    }
+}
+@media (max-width: 768px) {
+    .background-image {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
 
 /*the team social handles*/
 .social{

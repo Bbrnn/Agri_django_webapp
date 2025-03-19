@@ -25,10 +25,9 @@
         <div class="col-md-6 text-content">
             <h1 class="display-5 mt-4" style="font-weight: 600; color:brown;">Contact Us</h1>
             <p class="lead">Have questions? Get in touch with us today!</p>
-            <a href="#" class="btn btn-custom">Reach Out</a>
+            <a href="#contact-form" class="btn btn-custom">Reach Out</a>
         </div>
-
-       <div class="col-md-6 mb-2 d-flex justify-content-end" style="margin-right: 5px;">
+    <div class="col-md-6 mb-2 d-flex justify-content-end" style="margin-right: 5px;">
     <div class="d-flex flex-column justify-content-between" style="width: 100%;">
         <!-- Phone Icon -->
         <div class="phone-icon mb-4 text-center">
@@ -112,50 +111,39 @@
     </div>
   </section>
 
+ <section id="contact-form" class="container d-flex flex-column align-items-center justify-content-center h-auto" >
+   <h3 class="text-center mb-4">Send a Message</h3>
+
+ <form action="https://formspree.io/f/mblgdlnj" method="POST" class="php-email-form w-75">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+    </div>
+    <div class="mb-3">
+        <label for="subject" class="form-label">Subject</label>
+        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+    </div>
+    <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
+    </div>
+    <div class="text-center mt-3">
+        <button type="submit" class="btn w-100 btn-custom text-white" style="background-color: green">Send Message</button>
+    </div>
+</form>
+
+ </section>
+
 
 {% endblock %}
+<script>
+document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+});
+</script>
 
-
-<!-- contact form
-
-<div class="card h-75" style="border:none;">
-            <div class="card-body" >
-              <h4 class="card-title mb-2" style="color:green;"  >Reach Out</h4>
-              <form  method="post" role="form" class="php-email-form">
-
-                    <div class="alert alert-danger">
-                       <strong>Error!</strong> Please correct the errors below.
-                     </div>
-
-
-                <div class="mb-3">
-                  <label for="name" class="form-label">Name</label>
-
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-                <div class="mb-3">
-                  <label for="subject" class="form-label">Subject</label>
-
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                </div>
-
-                <div class="mb-3">
-                  <label for="message" class="form-label">Message</label>
-
-                  <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required></textarea>
-                </div>
-
-                <div class="text-center   mt-3 ">
-                  <button type="submit" class="btn  w-100 btn-custom text-white" style="background-color: green" >Send Message</button>
-                </div>
-
-              </form>
-
-            </div>
-          </div>
--->

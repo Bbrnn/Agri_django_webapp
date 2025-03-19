@@ -4,29 +4,30 @@
 {% block title %}About Us - Symon Orchards{% endblock %}
 
 {% block content %}
-<section class="about-hero ">
-    <div class="container-fluid hero-section">
+<section class="about-hero h-auto ">
+    <div class="container hero-section">
         <div class="row">
             <!-- Left side: Text content -->
-            <div class="col-md-6 d-flex align-items-center mt-5">
-                <div class="hero-content">
+            <div class="col-lg-6 col-md-6 col-sm-12 text-center text-md-start d-flex align-items-center mt-3">
+                <div class="hero-content px-4 w-100" style="max-width: 500px; margin: auto;">
                     <h1 class="display-4">About Us</h1>
-                    <hr class=" text-align-left w-50 ">
-                    <p class="lead m-5">
-                       <span class="drop-can"> S</span>ymon Orchards is a family-owned agribusiness dedicated to providing fresh, organic farm products to our community. Our products include apples,pomegranate,pineapples,vegetables, water and more. We take pride in organic farming practices and delivering the best products to our customers.
+                    <hr class="text-align-left w-50">
+                    <p class="lead m-2"> <!-- Reduced margin from m-5 to m-2 -->
+                        <span class="drop-can">S</span>ymon Orchards is a family-owned agribusiness dedicated to providing fresh, organic farm products to our community. Our products include apples, pomegranates, pineapples, vegetables, water, and more. We take pride in organic farming practices and delivering the best products to our customers.
                     </p>
-                    <a href="{% url 'product_list' %}" class="btn btn-custom btn-md  m-3 mt-0 ">Shop with Us</a>
+                    <a href="{% url 'product_list' %}" class="btn btn-custom btn-md m-3 mt-0">Shop with Us</a>
                 </div>
             </div>
 
             <!-- Right side: Illustration or Image -->
-            <div class="col-md-6 hero-image mt-5 ">
-               <img src="{% static 'images/farmer2.jpg' %}" alt="Farm Illustration" class="img-rounded">
-
+            <div class="hero-image col-lg-6 col-md-6 col-sm-12 text-center mt-3 ">
+                <img src="{% static 'images/farmer2.jpg' %}" alt="Farm Illustration" class="img-rounded" style="max-width: 100%;
+    height: auto;">
             </div>
         </div>
     </div>
 </section>
+
 
  <section class="mission-section">
         <div class="container-mission">
@@ -53,8 +54,8 @@
       <!-- Service Items -->
       <div class="row ">
         <!-- Service 01: Products -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card " style="height: 450px; border: 2px solid green;">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-4">
+          <div class="card " style="height: 100%; border: 2px solid green;">
             <div class="card-body text-center">
 
               <div class="service-icon" style="font-size: 40px;">
@@ -68,8 +69,8 @@
         </div>
 
         <!-- Service 02: Animal Keeping -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card" style="height: 450px; border: 2px solid green;">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="card" style="height: 100%; border: 2px solid green;">
             <div class="card-body text-center" >
 
               <div class="service-icon" style="font-size: 40px;">
@@ -83,8 +84,8 @@
         </div>
 
         <!-- Service 03: Water Management -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card" style="height: 450px; border: 2px solid green;">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="card" style="height: 100%; border: 2px solid green;">
             <div class="card-body text-center" >
 
               <div class="service-icon" style="font-size: 40px;">
@@ -98,17 +99,17 @@
         </div>
       </div>
     </div>
-      <div class="text-centre my-3">
-      <a href="{% url 'product_list' %}" class="btn btn-custom mb-4 w-50" style="display: block;margin: 0 auto; ">Check out our products</a>
+      <div class="text-centre my-3 ">
+      <a href="{% url 'product_list' %}" class="btn btn-custom  w-50" style="display: block;margin: 0 auto; ">Check out our products</a>
       </div>
   </div>
 </section>
 
 
 <!-- Our story -->
-<section id="our-story" class="story section bg-light-subtle text-black" style="margin-top:80px;height: auto;">
-  <div class="container">
-    <div class="row gy-4 mt-5">
+<section id="our-story" class="story section bg-light-subtle text-black" style="height: auto;">
+  <div class="container" >
+    <div class="row gy-4 gy-4 gx-lg-5">
         <!-- "Our Story" section comes first -->
       <div class="col-lg-6 text-black">
         <h2 class="content-title mb-4" style="color:brown;">Our Story</h2>
@@ -140,8 +141,8 @@
 
         <!-- Image section comes second -->
       <div class="col-lg-6">
-        <div class="image-container">
-                     <img src="{% static 'images/farmers.jpg' %}" alt="Our Story Image" class="img-rounded background-image" />
+        <div class="image-container p-lg-3">
+                     <img src="{% static 'images/farmers.jpg' %}" alt="Our Story Image" class="img-rounded background-image me-lg-3"/>
         </div>
       </div>
 
@@ -156,8 +157,8 @@
 <section class="team-15 team section" id="team" style="height: auto; width:auto;">
   <!-- Section Title -->
   <div class="container section-title text-center mt-md-5" data-aos="fade-up">
-    <h2 style="color:brown;">Meet the Team</h2>
-    <p>Meet the passionate people behind our success</p>
+    <h2>Meet the Team</h2>
+    <h5 class="text-center" style="color:black;">Meet the passionate people behind our success</h5>
   </div><!-- End Section Title -->
 
   <div class="content">
@@ -175,9 +176,9 @@
                 <a href="#"><span class="bi bi-linkedin"></span></a>
               </div>
             </figure>
-            <div class="person-contents">
-              <h3>Simon</h3>
-              <span class="position">Founder</span>
+            <div class="person-contents dflex justify-content-center align-items-center">
+                <h3> Simon</h3>
+                <p>Founder</p>
             </div>
           </div>
         </div>

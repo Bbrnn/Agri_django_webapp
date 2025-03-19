@@ -58,7 +58,7 @@
 </head>
 
 <body>
-<header class="navbar navbar-expand-lg w-auto " >
+<header class="navbar navbar-expand-lg">
     <div class="container d-flex align-items-center justify-content-between p-0">
 
         <!-- Logo -->
@@ -66,41 +66,63 @@
             <img src="{% static 'images/212677436.png' %}" alt="Logo" style="height: 60px;">
         </a>
 
+        <!-- Right-Side Group: Cart Icon and Hamburger Button -->
+        <div class="cart-hamburger d-flex d-lg-none align-items-center ms-auto">
+             <!-- Cart Icon -->
+            <a href="{% url 'view_cart' %}" class="cart-icon position-relative">
+                <i class="fas fa-shopping-cart fa-lg"></i>
+                {% if request.session.cart %}
+                    <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">
+                        {{ request.session.cart|length }}
+                    </span>
+                {% endif %}
+            </a>
+            <!-- Navbar Toggle Button -->
+            <button class="navbar-toggler border-0 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
 
+        </div>
 
 
 
         <!-- Navbar Links -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto d-flex justify-content-center align-items-center gap-2 gap-xl-3 fs-1">
+        <div class="collapse navbar-collapse" id="navbarNav" >
+            <ul class="navbar-nav mx-auto d-flex justify-content-center align-items-center gap-2 gap-xl-3 fs-5">
                 <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'product_list' %}">Products</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
             </ul>
+            <!--Get Started Button for Smaller Screens-->
+            <ul class="navbar-nav d-lg-none">
+                <li class="nav-item">
+                    <a href="{% url 'user_register' %}" class="btn btn-custom btn-lg mt-2 px-4 py-2 w-100">Get Started</a>
+                </li>
+            </ul>
+
         </div>
-        <!-- Cart Icon with Item Count -->
-        <a href="{% url 'view_cart' %}" class="cart-icon me-3 position-relative">
-            <i class="fas fa-shopping-cart fa-lg "></i>
-            {% if request.session.cart %}
-                <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">
-                    {{ request.session.cart|length }}
-                </span>
-            {% endif %}
-        </a>
+     <!-- Cart Icon and Get Started Button (Visible for Large Screens) -->
+        <div class="d-none d-lg-flex align-items-center d-none d-lg-flex">
+            <!-- Cart Icon -->
+            <a href="{% url 'view_cart' %}" class="cart-icon me-3 position-relative">
+                <i class="fas fa-shopping-cart fa-lg"></i>
+                {% if request.session.cart %}
+                    <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">
+                        {{ request.session.cart|length }}
+                    </span>
+                {% endif %}
+            </a>
 
-
-
-        <!-- Get Started Button -->
-        <a href="{% url 'user_register' %}" class="btn btn-custom btn-lg  d-none d-md-block px-4 py-2" >Get Started</a>
-
-    <!-- Navbar Toggle Button for Mobile -->
+            <!-- Get Started Button -->
+            <a href="{% url 'user_register' %}" class="btn btn-custom btn-lg px-4 py-2" style="border: white;">Get Started</a>
+        </div>
 
 
     </div>
-
 </header>
+
 
     <!-- Main Content Section -->
     <main>
