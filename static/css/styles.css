@@ -50,19 +50,20 @@ header.navbar {
 
 }
 
-
-
-/* Get Started Button */
-.btn-custom {
-    background-color: green;
-    color: black;
-    font-weight: bold;
+.nav-item{
+    color: white;
 }
 
 
 
+/* Get Started Button */
 
-
+.btn-custom {
+    background-color: green;
+    color: black;
+    font-weight: bold;
+    border:none;
+}
 
 a {
   position: relative;
@@ -75,12 +76,6 @@ a {
   transform-origin: left;
   transform: scaleX(1);
 }
-
-/* Hide the links inside the navigation menu (except for logo/home) */
-.navbar #navbarNav {
-  display: none;
-}
-
 
 
 
@@ -335,6 +330,3 @@ footer a:hover {
     color: white;
 }
 
-.nav-item{
-    color: white;
-}

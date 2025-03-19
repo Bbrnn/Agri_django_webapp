@@ -21,6 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 import os
 
 import environ
+import dj_database_url
+
+
 env = environ.Env()
 
 environ.Env.read_env()
@@ -48,22 +51,31 @@ TEST_PHONE = env("DARAJA_TEST_PHONE", default="254708374149")
 
 
 
-
 env.read_env(env_path)
 # Now check if the variables are being read
 #print(env('DATABASE_NAME'))
+# Get environment type
+
+ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
 
 # Access the environment variables
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': env('DATABASE_NAME'),
-        'USER': env('DATABASE_USER'),
-        'PASSWORD': env('DATABASE_PASSWORD'),
-        'HOST': env('DATABASE_HOST'),
-        'PORT': env('DATABASE_PORT'),
+
+if ENVIRONMENT == 'production':
+    DATABASE_URL = os.getenv('DATABASE_URL')
+    DATABASES = {
+        'default': dj_database_url.parse(DATABASE_URL)
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': env('DATABASE_NAME'),
+            'USER': env('DATABASE_USER'),
+            'PASSWORD': env('DATABASE_PASSWORD'),
+            'HOST': env('DATABASE_HOST'),
+            'PORT': env('DATABASE_PORT'),
+        }
+    }
 
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
